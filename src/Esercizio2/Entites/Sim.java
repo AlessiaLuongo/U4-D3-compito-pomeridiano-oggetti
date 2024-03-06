@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.Random;
 
 public class Sim {
-    public String numeroDiTelefono;
     public int credito;
     public List<String> ultimeCinqueChiamate;
+    private String numeroDiTelefono;
 
     public Sim(String numeroDiTelefono) {
         this.numeroDiTelefono = numeroDiTelefono;

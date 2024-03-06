@@ -3,10 +3,10 @@ package Esercizio3.Entites;
 import java.util.Random;
 
 public class Articolo {
-    int codiceArticolo;
-    String descrizioneArticolo;
-    double prezzo;
-    int pezziDisponibili;
+    private final int codiceArticolo;
+    public String descrizioneArticolo;
+    public double prezzo;
+    private int pezziDisponibili;
 
     public Articolo(String descrizioneArticolo, double prezzo, int pezziDisponibili) {
         Random codiceArticolo = new Random();
@@ -16,6 +16,16 @@ public class Articolo {
         this.prezzo = prezzo;
         this.pezziDisponibili = pezziDisponibili;
     }
+
+    public int getCodiceArticolo() {
+        return codiceArticolo;
+    }
+
+
+    public int aggiornoPezziDisponibili() {
+        return pezziDisponibili = pezziDisponibili - 1;
+    }
+
 
     @Override
     public String toString() {

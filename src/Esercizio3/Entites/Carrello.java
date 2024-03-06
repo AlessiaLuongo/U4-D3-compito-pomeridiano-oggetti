@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Carrello {
-    int codiceClienteAssociato;
-    List<Articolo> listaArticoli;
-    int costoArticoli;
+    private final int codiceClienteAssociato;
+    public List<Articolo> listaArticoli;
+    public double costoArticoli;
 
     public Carrello(int codiceClienteAssociato) {
         this.codiceClienteAssociato = codiceClienteAssociato;
@@ -14,12 +14,19 @@ public class Carrello {
         this.costoArticoli = 0;
     }
 
+    public void acquistaArticolo(Articolo articolo) {
+        listaArticoli.add(articolo);
+        costoArticoli = costoArticoli + articolo.prezzo;
+        articolo.aggiornoPezziDisponibili();
+
+    }
+
     @Override
     public String toString() {
         return "Carrello{" +
-                "codiceClienteAssociato=" + codiceClienteAssociato +
-                ", listaArticoli=" + listaArticoli +
-                ", costoArticoli=" + costoArticoli +
+                "codiceClienteAssociato= " + codiceClienteAssociato +
+                ", listaArticoli= " + listaArticoli +
+                ", costoArticoli= " + costoArticoli + "€" +
                 '}';
     }
 }
